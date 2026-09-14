@@ -1,0 +1,45 @@
+import heroImage from '../../assets/design-foundations/profilepic-optimized.jpg'
+import resumePdf from '../../assets/design-foundations/JamesCaldwellResume.pdf'
+import ActionLink from '../atoms/ActionLink'
+
+function SplitHero() {
+  return (
+    <section className="split-hero" aria-labelledby="hero-title">
+      <div className="hero-copy">
+        <p className="eyebrow">Full-stack developer / {new Date().getFullYear()}</p>
+        <h1 id="hero-title">
+          Building digital
+          <span>experiences</span>
+          with intention.
+        </h1>
+        <p className="hero-intro">
+          I&apos;m James Caldwell, a full-stack developer who turns thoughtful ideas into
+          powerful UI/UX.
+        </p>
+        <div className="hero-actions">
+          <ActionLink href="#projects">View selected work</ActionLink>
+          <ActionLink href="#contact" variant="outline">
+            Start a conversation
+          </ActionLink>
+        </div>
+      </div>
+
+      <div className="hero-portrait">
+        <div className="portrait-frame">
+          <img src={heroImage} alt="James Caldwell, full-stack developer" />
+          <span className="portrait-label">James Caldwell / 01</span>
+        </div>
+        <a
+          className="resume-link"
+          href={resumePdf}
+          download="JamesCaldwellResume.pdf"
+        >
+          View resume
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+  )
+}
+
+export default SplitHero
