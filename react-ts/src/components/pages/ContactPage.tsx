@@ -21,7 +21,7 @@ function ContactPage() {
       >
         <div>
           <p className="eyebrow">Start a conversation / 05</p>
-          <h1 id="contact-title">Let&apos;s make<br /><span>something useful.</span></h1>
+          <h1 id="contact-title">Let&apos;s make<br />something useful.</h1>
         </div>
         <p className="contact-intro__copy">
           Have a project in mind, or just want to compare notes? <strong>Reach out directly</strong> and I&apos;ll get back to you soon.
