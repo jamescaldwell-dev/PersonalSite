@@ -123,7 +123,7 @@ export const projects: Project[] = [
       'Built the frontend with React, TypeScript, and Vite, using focused page, organism, molecule, and atom components.',
       'Added React Router for clean URLs such as /about, /resume, /projects, and /contact with static-host SPA fallback support.',
       'Created a responsive About gallery with optimized WebP assets, lazy loading, intrinsic dimensions, and restrained scroll motion.',
-      'Implemented an Express contact API that validates submissions and sends messages through the Resend API without bundling secrets into the client.'
+      'Designed the current contact experience around direct email and LinkedIn links, keeping personal communication simple and familiar for visitors.'
     ],
     nonTechnicalDetails: [
       'Personal branding works best when it feels authentic instead of overly polished without voice or personality.',

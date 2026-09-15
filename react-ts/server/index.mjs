@@ -3,22 +3,90 @@ import express from 'express'
 
 const app = express()
 const port = Number(process.env.PORT ?? 8787)
+const allowedOrigins = new Set(
+  (process.env.ALLOWED_ORIGINS ?? 'http://localhost:5173,https://jcaldwell.io,https://www.jcaldwell.io')
+    .split(',')
+    .map((origin) => origin.trim())
+    .filter(Boolean),
+)
 const recentSubmissions = new Map()
+const requestCounts = new Map()
+const submissionCooldownMs = 60_000
+const rateLimitWindowMs = 15 * 60_000
+const maximumRequestsPerWindow = 3
+const fieldLimits = {
+  name: 100,
+  email: 254,
+  subject: 160,
+  message: 5_000,
+}
 
 app.use(express.json({ limit: '20kb' }))
+app.disable('x-powered-by')
+
+app.use((request, response, next) => {
+  response.set({
+    'Cache-Control': 'no-store',
+    'Referrer-Policy': 'no-referrer',
+    'X-Content-Type-Options': 'nosniff',
+  })
+
+  const origin = request.get('origin')
+  if (request.method === 'POST' && (!origin || !allowedOrigins.has(origin))) {
+    return response.status(403).json({ error: 'This request origin is not allowed.' })
+  }
+
+  return next()
+})
+
+function exceedsRateLimit(clientAddress, now) {
+  const requests = (requestCounts.get(clientAddress) ?? []).filter(
+    (timestamp) => now - timestamp < rateLimitWindowMs,
+  )
+
+  if (requests.length >= maximumRequestsPerWindow) {
+    requestCounts.set(clientAddress, requests)
+    return true
+  }
+
+  requests.push(now)
+  requestCounts.set(clientAddress, requests)
+  return false
+}
+
+function containsControlCharacters(value) {
+  return /[\r\n\0]/.test(value)
+}
 
 app.post('/api/contact', async (request, response) => {
-  const { name, email, subject, message } = request.body ?? {}
-  const values = [name, email, subject, message].map((value) => typeof value === 'string' ? value.trim() : '')
+  if (!request.body || typeof request.body !== 'object' || Array.isArray(request.body)) {
+    return response.status(400).json({ error: 'Please submit a valid message.' })
+  }
 
-  if (values.some((value) => !value) || !/^\S+@\S+\.\S+$/.test(email)) {
+  const { name, email, subject, message } = request.body
+  const values = [name, email, subject, message].map((value) => typeof value === 'string' ? value.trim() : '')
+  const [cleanName, cleanEmail, cleanSubject, cleanMessage] = values
+
+  if (
+    values.some((value) => !value)
+    || !/^\S+@\S+\.\S+$/.test(cleanEmail)
+    || cleanName.length > fieldLimits.name
+    || cleanEmail.length > fieldLimits.email
+    || cleanSubject.length > fieldLimits.subject
+    || cleanMessage.length > fieldLimits.message
+    || containsControlCharacters(cleanName)
+    || containsControlCharacters(cleanSubject)
+  ) {
     return response.status(400).json({ error: 'Please complete every field with a valid email address.' })
   }
 
-  const [cleanName, cleanEmail, cleanSubject, cleanMessage] = values
   const now = Date.now()
+  if (exceedsRateLimit(request.ip, now)) {
+    return response.status(429).json({ error: 'Please wait before sending another message.' })
+  }
+
   const lastSubmission = recentSubmissions.get(cleanEmail) ?? 0
-  if (now - lastSubmission < 60_000) {
+  if (now - lastSubmission < submissionCooldownMs) {
     return response.status(429).json({ error: 'Please wait a minute before sending another message.' })
   }
 
