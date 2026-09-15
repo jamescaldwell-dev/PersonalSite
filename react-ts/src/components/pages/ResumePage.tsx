@@ -1,9 +1,10 @@
 import resumePdf from '../../assets/design-foundations/JamesCaldwellResume.pdf'
 import SiteHeader from '../molecules/SiteHeader'
+import SiteFooter from '../molecules/SiteFooter'
 
 const experience = [
   {
-    period: '2023 — Present',
+    period: 'July 2022 to Sept 2026',
     title: 'Software Engineer',
     company: 'Quest Analytics, LLC',
     location: 'Overland Park, KS / Remote',
@@ -20,7 +21,7 @@ const experience = [
     technologies: ['C#', 'ASP.NET Core', 'React', 'TypeScript', 'GraphQL', 'MongoDB', 'Azure', 'T-SQL'],
   },
   {
-    period: '2019 — 2023',
+    period: 'Apr 2019 to Aug 2022',
     title: 'Technical Trainer & Co-Lead',
     company: 'Centriq Training',
     location: 'Kansas City, MO',
@@ -34,7 +35,7 @@ const experience = [
     technologies: ['React', 'ASP.NET Core', 'JavaScript', 'C#', 'SQL', 'HTML/CSS', 'Firebase', 'Git'],
   },
   {
-    period: '2018 — 2019',
+    period: 'Sept 2018 to Mar 2019',
     title: 'Full Stack Developer (Contract)',
     company: "Houlihan's Restaurant Group",
     location: 'Leawood, KS',
@@ -48,7 +49,7 @@ const experience = [
     technologies: ['ASP.NET MVC', 'ASP.NET WebForms', 'DotNetNuke', 'Evoq CMS', 'C#', 'JavaScript', 'SQL Server'],
   },
   {
-    period: '2011 — 2017',
+    period: '2011 to 2017',
     title: "Children's Ministry Coordinator",
     company: 'Christ Lutheran Church',
     location: 'Overland Park, KS',
@@ -174,6 +175,7 @@ function ResumePage() {
           </section>
         </div>
       </div>
+      <SiteFooter />
     </main>
   )
 }

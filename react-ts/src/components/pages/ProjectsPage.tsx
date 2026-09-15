@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import SiteHeader from '../molecules/SiteHeader'
+import SiteFooter from '../molecules/SiteFooter'
 import { projects, type Project, type ProjectDetailType } from '../../data/projects'
 
 function ProjectsPage() {
@@ -77,6 +78,8 @@ function ProjectsPage() {
           </article>
         ))}
       </section>
+
+      <SiteFooter />
 
       {activeProject && (
         <div className="project-modal" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">

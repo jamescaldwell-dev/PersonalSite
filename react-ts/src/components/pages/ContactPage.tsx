@@ -1,133 +1,61 @@
-import { type FormEvent, useState } from 'react'
 import SiteHeader from '../molecules/SiteHeader'
-
-type ContactForm = {
-  name: string
-  email: string
-  subject: string
-  message: string
-}
-
-const initialForm: ContactForm = {
-  name: '',
-  email: '',
-  subject: '',
-  message: '',
-}
+import SiteFooter from '../molecules/SiteFooter'
+import contactBackgroundImage from '../../assets/design-foundations/background.jpg'
 
 function ContactPage() {
-  const [form, setForm] = useState<ContactForm>(initialForm)
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
-  const [errorMessage, setErrorMessage] = useState('')
-
-  const updateField = (field: keyof ContactForm, value: string) => {
-    setForm((currentForm) => ({ ...currentForm, [field]: value }))
-    if (status !== 'idle') setStatus('idle')
-  }
-
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    setStatus('sending')
-    setErrorMessage('')
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
-      })
-
-      if (!response.ok) {
-        const result = (await response.json().catch(() => null)) as { error?: string } | null
-        throw new Error(result?.error ?? 'Something went wrong. Please try again.')
-      }
-
-      setForm(initialForm)
-      setStatus('success')
-    } catch (error) {
-      setErrorMessage(error instanceof Error ? error.message : 'Something went wrong. Please try again.')
-      setStatus('error')
-    }
-  }
-
   return (
     <main className="portfolio-shell contact-page" id="contact">
       <SiteHeader />
 
-      <section className="contact-intro" aria-labelledby="contact-title">
+      <section
+        className="contact-intro"
+        aria-labelledby="contact-title"
+        style={{ backgroundImage: `url(${contactBackgroundImage})` }}
+      >
         <div>
           <p className="eyebrow">Start a conversation / 05</p>
           <h1 id="contact-title">Let&apos;s make<br /><span>something useful.</span></h1>
         </div>
         <p className="contact-intro__copy">
-          Have a project in mind, or just want to compare notes? Send a message and I&apos;ll get back to you soon.
+          Have a project in mind, or just want to compare notes? <strong>Reach out directly</strong> and I&apos;ll get back to you soon.
         </p>
       </section>
 
-      <section className="contact-layout" aria-label="Contact form">
+      <section className="contact-layout" aria-label="Contact options">
         <div className="contact-aside">
           <p className="contact-aside__label">Good conversations start small.</p>
           <p>Tell me what you&apos;re working on, where things are stuck, or what you&apos;d like to explore.</p>
-          <a href="mailto:hello@jcaldwell.io">hello@jcaldwell.io <span aria-hidden="true">↗</span></a>
         </div>
 
-        <form className="contact-form" onSubmit={handleSubmit}>
-          <div className="contact-form__fields">
-            <label>
-              Name
-              <input
-                required
-                name="name"
-                type="text"
-                autoComplete="name"
-                value={form.name}
-                onChange={(event) => updateField('name', event.target.value)}
-              />
-            </label>
-            <label>
-              Email
-              <input
-                required
-                name="email"
-                type="email"
-                autoComplete="email"
-                value={form.email}
-                onChange={(event) => updateField('email', event.target.value)}
-              />
-            </label>
-          </div>
-          <label>
-            Subject
-            <input
-              required
-              name="subject"
-              type="text"
-              value={form.subject}
-              onChange={(event) => updateField('subject', event.target.value)}
-            />
-          </label>
-          <label>
-            Message
-            <textarea
-              required
-              name="message"
-              rows={7}
-              value={form.message}
-              onChange={(event) => updateField('message', event.target.value)}
-            />
-          </label>
+        <div className="contact-options">
+          <a className="contact-option" href="mailto:james.caldwell82@outlook.com?subject=Inquiry%20on%20jcaldwell.io">
+            <span className="contact-option__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M3 5.5h18v13H3v-13Zm1.8 1.8 7.2 5.4 7.2-5.4M4.8 16.7l5.1-4m9.3 4-5.1-4" />
+              </svg>
+            </span>
+            <span>
+              <strong>Email James</strong>
+              <small>Open your email client</small>
+            </span>
+            <span className="contact-option__arrow" aria-hidden="true">↗</span>
+          </a>
 
-          <div className="contact-form__footer">
-            <button className="contact-form__submit" type="submit" disabled={status === 'sending'}>
-              {status === 'sending' ? 'Sending...' : 'Send message'} <span aria-hidden="true">↗</span>
-            </button>
-            <div aria-live="polite" className={`contact-form__status contact-form__status--${status}`}>
-              {status === 'success' && 'Message sent. A copy is on its way to your inbox.'}
-              {status === 'error' && errorMessage}
-            </div>
-          </div>
-        </form>
+          <a className="contact-option" href="https://www.linkedin.com/in/james-caldwell-686042138/" target="_blank" rel="noreferrer">
+            <span className="contact-option__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M5.2 8.2H2.1V21h3.1V8.2ZM3.65 2A1.82 1.82 0 1 0 3.65 5.64 1.82 1.82 0 0 0 3.65 2ZM21.9 13.67c0-3.86-2.06-5.66-4.81-5.66-2.22 0-3.21 1.22-3.76 2.08V8.2h-3.1V21h3.1v-6.33c0-1.67.31-3.29 2.39-3.29 2.05 0 2.08 1.92 2.08 3.4V21h3.1v-7.33Z" />
+              </svg>
+            </span>
+            <span>
+              <strong>Message on LinkedIn</strong>
+              <small>Connect with James Caldwell</small>
+            </span>
+            <span className="contact-option__arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
       </section>
+      <SiteFooter />
     </main>
   )
 }

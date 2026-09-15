@@ -15,6 +15,28 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: 'quest-outreach-platform',
+    title: 'Quest Outreach Platform',
+    subtitle: 'Healthcare outreach operations',
+    summary:
+      'A modular, scalable enterprise-level outreach platform supporting email, fax, phone, and direct mail campaigns for healthcare practice offices with large-volume operational needs.',
+    image: '/src/assets/design-foundations/QOP.jpg',
+    imageAlt: 'Quest Outreach Platform project preview',
+    technologies: ['C#', 'ASP.NET Core', 'HotChocolate', 'MassTransit', 'T-SQL', 'MongoDB', 'Azure Blob Storage', 'React', 'TypeScript', 'GraphQL', 'React Relay', 'MUI', 'Azure DevOps'],
+    technicalDetails: [
+      'Worked within a microservices-based architecture built for scale, modularity, and operational resilience in a high-volume outreach environment.',
+      'Used GraphQL and React Relay patterns to keep data fetching efficient while maintaining predictable state and performance for front-end work.',
+      'Focused on reliability, maintainability, and workflow organization in a system where throughput and process clarity mattered as much as the interface.',
+      'Built and refined AI-assisted delivery practices that supported key development tasks such as code reviews, documentation, and test coverage while improving team efficiency and quality.'
+    ],
+    nonTechnicalDetails: [
+      'Strong alignment in Scrum ceremonies can make complex work feel manageable and reduce wasted effort across teams.',
+      'I saw how different strengths across a development team can be leveraged to improve speed and quality when the team is organized well.',
+      'The balance between process and flexibility is essential when a project is scaling and requirements are evolving.',
+      'Good testing strategy and stakeholder understanding can save significant time and reduce risk under delivery pressure.'
+    ]
+  },
+  {
     id: 'bristol-seafood-grill',
     title: 'Bristol Seafood Grill',
     subtitle: 'Upscale restaurant experience',
@@ -40,7 +62,7 @@ export const projects: Project[] = [
   {
     id: 'devon-seafood-grill',
     title: 'Devon Seafood Grill',
-    subtitle: 'Multi-location brand system',
+    subtitle: 'Upscale restaurant experience',
     summary:
       'A scalable restaurant website built to maintain brand consistency while giving each location its own local information and user experience.',
     image: '/src/assets/design-foundations/DevonSeafood.jpg',
@@ -81,28 +103,6 @@ export const projects: Project[] = [
       'I learned that curation is just as important as creation because the best learning experiences reduce noise and guide attention.',
       'Community-driven features can improve engagement when they support discovery and accountability rather than adding unnecessary complexity.',
       'Progressive complexity helps learners build confidence without overwhelming them too early in their journey.'
-    ]
-  },
-  {
-    id: 'quest-outreach-platform',
-    title: 'Quest Outreach Platform',
-    subtitle: 'Healthcare outreach operations',
-    summary:
-      'A modular, scalable outreach platform supporting email, fax, phone, and direct mail campaigns for healthcare practice offices with large-volume operational needs.',
-    image: '/src/assets/design-foundations/QOP.jpg',
-    imageAlt: 'Quest Outreach Platform project preview',
-    technologies: ['C#', 'ASP.NET Core', 'HotChocolate', 'MassTransit', 'T-SQL', 'MongoDB', 'Azure Blob Storage', 'React', 'TypeScript', 'GraphQL', 'React Relay', 'MUI', 'Azure DevOps'],
-    technicalDetails: [
-      'Worked within a microservices-based architecture built for scale, modularity, and operational resilience in a high-volume outreach environment.',
-      'Used GraphQL and React Relay patterns to keep data fetching efficient while maintaining predictable state and performance for front-end work.',
-      'Focused on reliability, maintainability, and workflow organization in a system where throughput and process clarity mattered as much as the interface.',
-      'Built and refined delivery practices that supported complex workflows across teams and deployment pipelines.'
-    ],
-    nonTechnicalDetails: [
-      'Strong alignment in Scrum ceremonies can make complex work feel manageable and reduce wasted effort across teams.',
-      'I saw how different strengths across a development team can be leveraged to improve speed and quality when the team is organized well.',
-      'The balance between process and flexibility is essential when a project is scaling and requirements are evolving.',
-      'Good testing strategy and stakeholder understanding can save significant time and reduce risk under delivery pressure.'
     ]
   },
   {

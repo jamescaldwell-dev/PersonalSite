@@ -1,4 +1,5 @@
 import SiteHeader from '../molecules/SiteHeader'
+import SiteFooter from '../molecules/SiteFooter'
 import AfkSection from '../organisms/AfkSection'
 import SplitHero from '../organisms/SplitHero'
 
@@ -23,6 +24,8 @@ function HomePage() {
         <section id="resume" />
         <section id="projects" />
       </div>
+
+      <SiteFooter />
     </main>
   )
 }

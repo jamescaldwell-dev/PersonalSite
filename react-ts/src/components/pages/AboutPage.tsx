@@ -1,4 +1,5 @@
 import SiteHeader from '../molecules/SiteHeader'
+import SiteFooter from '../molecules/SiteFooter'
 import ActionLink from '../atoms/ActionLink'
 import AboutGallery from '../organisms/AboutGallery'
 
@@ -25,6 +26,7 @@ function AboutPage() {
       </section>
 
       <AboutGallery />
+      <SiteFooter />
     </main>
   )
 }
