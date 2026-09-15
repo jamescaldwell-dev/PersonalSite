@@ -1,3 +1,7 @@
+import bristolImage from '../assets/design-foundations/bristol.jpg'
+import devonImage from '../assets/design-foundations/DevonSeafood.jpg'
+import questImage from '../assets/design-foundations/QOP.jpg'
+
 export type ProjectDetailType = 'technical' | 'non-technical'
 
 export type Project = {
@@ -20,7 +24,7 @@ export const projects: Project[] = [
     subtitle: 'Healthcare outreach operations',
     summary:
       'A modular, scalable enterprise-level outreach platform supporting email, fax, phone, and direct mail campaigns for healthcare practice offices with large-volume operational needs.',
-    image: '/src/assets/design-foundations/QOP.jpg',
+    image: questImage,
     imageAlt: 'Quest Outreach Platform project preview',
     technologies: ['C#', 'ASP.NET Core', 'HotChocolate', 'MassTransit', 'T-SQL', 'MongoDB', 'Azure Blob Storage', 'React', 'TypeScript', 'GraphQL', 'React Relay', 'MUI', 'Azure DevOps'],
     technicalDetails: [
@@ -42,7 +46,7 @@ export const projects: Project[] = [
     subtitle: 'Upscale restaurant experience',
     summary:
       'A polished multi-location dining website designed to convey a premium atmosphere while making menu and reservation experiences easy to navigate.',
-    image: '/src/assets/design-foundations/bristol.jpg',
+    image: bristolImage,
     imageAlt: 'Bristol Seafood Grill project preview',
     liveUrl: 'https://bristolseafoodgrill.com/',
     technologies: ['ASP.NET MVC', 'ASP.NET WebForms', 'DotNetNuke', 'C#', 'JavaScript', 'SQL Server', 'HTML/CSS'],
@@ -65,7 +69,7 @@ export const projects: Project[] = [
     subtitle: 'Upscale restaurant experience',
     summary:
       'A scalable restaurant website built to maintain brand consistency while giving each location its own local information and user experience.',
-    image: '/src/assets/design-foundations/DevonSeafood.jpg',
+    image: devonImage,
     imageAlt: 'Devon Seafood Grill project preview',
     liveUrl: 'https://devonseafood.com/',
     technologies: ['ASP.NET MVC', 'ASP.NET WebForms', 'DotNetNuke', 'C#', 'JavaScript', 'SQL Server', 'HTML/CSS'],
