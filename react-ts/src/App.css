@@ -137,7 +137,7 @@ h1 span { color: var(--coral); display: block; font-style: italic; padding-left:
 .contact-intro h1, .contact-intro .eyebrow { color: var(--paper); }
 .contact-intro h1 span { color: #e07a6d; }
 .contact-intro h1 { font-size: clamp(3.8rem, 8.5vw, 8.8rem); }
-.contact-intro__copy { align-self: end; background: var(--ink); color: var(--paper); font-size: 1.05rem; line-height: 1.5; margin: 0; max-width: none; padding: 1.5rem 4vw; text-align: center; }
+.contact-intro__copy { align-self: end; background: var(--ink); color: var(--paper); font-size: 1.05rem; line-height: 1.5; margin: 0 calc(-1 * (clamp(1.25rem, 4vw, 4rem) + 4vw)); max-width: none; padding: 1.5rem 4vw; text-align: center; }
 .contact-intro__copy strong { color: var(--coral); font-family: var(--display); font-weight: 600; }
 .contact-layout { display: grid; gap: clamp(3rem, 10vw, 10rem); grid-template-columns: minmax(180px, 0.55fr) minmax(0, 1fr); padding: clamp(3.5rem, 8vw, 7rem) 0 0; }
 .contact-aside { align-self: start; max-width: 250px; }
@@ -258,7 +258,7 @@ h1 span { color: var(--coral); display: block; font-style: italic; padding-left:
   .resume-intro__aside { max-width: 440px; }
   .contact-intro { align-items: start; grid-template-columns: 1fr; margin-inline: -1.25rem; padding: 5rem 1.25rem 0; }
   .contact-intro > div { padding-bottom: 5rem; }
-  .contact-intro__copy { padding: 1.5rem 1.25rem; }
+  .contact-intro__copy { margin-inline: -1.25rem; padding: 1.5rem 1.25rem; }
   .contact-layout { gap: 3rem; grid-template-columns: 1fr; padding-top: 3.5rem; }
   .contact-aside { max-width: 440px; }
   .contact-options { max-width: 440px; }
