@@ -4,6 +4,8 @@ import AboutPage from './components/pages/AboutPage'
 import HomePage from './components/pages/HomePage'
 import ResumePage from './components/pages/ResumePage'
 
+import ProjectsPage from './components/pages/ProjectsPage'
+
 function App() {
   const [currentHash, setCurrentHash] = useState(window.location.hash)
 
@@ -16,6 +18,7 @@ function App() {
 
   if (currentHash.startsWith('#resume')) return <ResumePage />
   if (currentHash.startsWith('#about-james')) return <AboutPage />
+  if (currentHash.startsWith('#projects')) return <ProjectsPage />
 
   return <HomePage />
 }
