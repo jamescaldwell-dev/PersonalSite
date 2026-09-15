@@ -4,7 +4,7 @@
 .brand-mark span { color: var(--coral); }
 .site-nav, .hero-actions { display: flex; gap: clamp(1rem, 2.7vw, 2.75rem); list-style: none; margin: 0; padding: 0; }
 .site-nav a, .availability, .home-footer, .eyebrow, .portrait-label, .resume-link { font-family: var(--mono); font-size: 0.67rem; letter-spacing: 0.11em; text-transform: uppercase; }
-.site-nav a { color: var(--muted); text-decoration: none; transition: color 180ms ease; }
+.site-nav a { color: var(--ink); text-decoration: none; transition: color 180ms ease; }
 .site-nav a.is-active { color: var(--ink); position: relative; }
 .site-nav a.is-active::after { background: var(--coral); bottom: -0.55rem; content: ''; height: 2px; left: 0; position: absolute; right: 0; }
 .site-nav a:hover, .site-nav a:focus-visible { color: var(--ink); }
@@ -223,7 +223,8 @@ h1 span { color: var(--coral); display: block; font-style: italic; padding-left:
   .site-header { grid-template-columns: 5.5rem minmax(0, 1fr); min-height: 112px; padding-top: 2.1rem; position: relative; }
   .brand-mark { align-items: center; border-right: 1px solid var(--line); display: flex; grid-column: 1; grid-row: 1; height: 100%; justify-content: center; padding-right: 0; }
   .site-header nav { align-self: center; grid-column: 2; grid-row: 1; min-width: 0; overflow: visible; padding: 0 0 0 1.25rem; }
-  .site-nav { flex-wrap: wrap; gap: 0.7rem 1.1rem; white-space: normal; }
+  .site-nav { display: grid; gap: 0.8rem 1.1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); white-space: normal; }
+  .site-nav a { font-size: 0.76rem; }
   .site-nav a.is-active::after { bottom: -0.35rem; }
   .availability { border-bottom: 1px solid var(--line); font-size: 0.58rem; height: 2.1rem; justify-content: flex-end; left: 0; padding: 0 0.1rem; position: absolute; right: 0; top: 0; }
   .split-hero { gap: 3.5rem; grid-template-columns: 1fr; padding: 5rem 0 4rem; }
