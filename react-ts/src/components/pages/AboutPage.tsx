@@ -1,5 +1,6 @@
 import SiteHeader from '../molecules/SiteHeader'
 import ActionLink from '../atoms/ActionLink'
+import AboutGallery from '../organisms/AboutGallery'
 
 function AboutPage() {
   return (
@@ -22,6 +23,8 @@ function AboutPage() {
           <ActionLink href="/" variant="outline">Back to home</ActionLink>
         </div>
       </section>
+
+      <AboutGallery />
     </main>
   )
 }
