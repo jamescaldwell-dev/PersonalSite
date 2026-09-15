@@ -69,7 +69,7 @@ export const projects: Project[] = [
     image:
       'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80',
     imageAlt: 'Laptop and developer workspace with code on screen',
-    technologies: ['React', 'TypeScript', 'Material UI', 'Firebase', 'ASP.NET Core API', 'Axios', 'T-SQL', 'Node.js'],
+    technologies: ['React', 'TypeScript', 'Bootstrap', 'Firebase', 'ASP.NET Core API', 'Axios', 'T-SQL', 'Node.js'],
     technicalDetails: [
       'Designed a content-rich interface that balances discovery, learning progression, and editorial clarity for a range of experience levels.',
       'Built the experience around reusable UI patterns and clear information architecture so content remains approachable as the library grows.',
@@ -108,19 +108,18 @@ export const projects: Project[] = [
   {
     id: 'personal-portfolio',
     title: 'Personal Portfolio',
-    subtitle: 'Brand and product storytelling',
+    subtitle: 'React portfolio repository',
     summary:
-      'A personal portfolio designed to present technical capability, creative direction, and communication in a way that feels polished, human, and memorable.',
+      'This repository powers a responsive personal portfolio that combines project storytelling, clean route-based navigation, an image-rich About page, and a server-backed contact experience.',
     image:
       'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80',
     imageAlt: 'Modern workspace with screen and minimal desk setup',
-    liveUrl: 'https://jcaldwell.io/',
-    technologies: ['React', 'TypeScript', 'Material UI', 'Firebase', 'EmailJS'],
+    technologies: ['React', 'TypeScript', 'Vite', 'React Router', 'CSS', 'Express', 'Resend API', 'Sharp'],
     technicalDetails: [
-      'Built an interactive portfolio experience balancing thoughtful motion, clear hierarchy, and strong information architecture.',
-      'Focused on performance and accessibility so the portfolio remains usable, fast, and clear across devices and assistive technologies.',
-      'Designed the experience around conversion paths and content clarity so visitors can understand capabilities and begin a conversation quickly.',
-      'Used reusable patterns so the site remains maintainable as new work and case studies are added.'
+      'Built the frontend with React, TypeScript, and Vite, using focused page, organism, molecule, and atom components.',
+      'Added React Router for clean URLs such as /about, /resume, /projects, and /contact with static-host SPA fallback support.',
+      'Created a responsive About gallery with optimized WebP assets, lazy loading, intrinsic dimensions, and restrained scroll motion.',
+      'Implemented an Express contact API that validates submissions and sends messages through the Resend API without bundling secrets into the client.'
     ],
     nonTechnicalDetails: [
       'Personal branding works best when it feels authentic instead of overly polished without voice or personality.',

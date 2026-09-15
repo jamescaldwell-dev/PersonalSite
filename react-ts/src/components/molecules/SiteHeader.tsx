@@ -28,7 +28,7 @@ function SiteHeader() {
 
       <NavLink className="availability" to="/contact">
         <span className="availability__dot" aria-hidden="true" />
-        Available for select work
+        Available for select projects
       </NavLink>
     </header>
   )
