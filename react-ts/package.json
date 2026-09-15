@@ -8,7 +8,8 @@
     "dev:api": "node server/index.mjs",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "preview:lighthouse": "vite preview --host 127.0.0.1 --port 4173"
   },
   "dependencies": {
     "dotenv": "^17.4.2",

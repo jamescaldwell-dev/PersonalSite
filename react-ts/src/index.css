@@ -1,16 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
-
 :root {
   --paper: #f3efe7;
   --ink: #1d1d1b;
-  --muted: #77746d;
+  --muted: #5f5d58;
   --line: #d8d1c5;
   --coral: #e65f4f;
   --coral-wash: rgba(230, 95, 79, 0.18);
   --sand: #c7b8a3;
-  --body: 'IBM Plex Sans', 'Segoe UI', sans-serif;
-  --display: 'Space Grotesk', 'Segoe UI', sans-serif;
-  --mono: 'IBM Plex Mono', Consolas, monospace;
+  --body: 'Segoe UI', Tahoma, sans-serif;
+  --display: 'Segoe UI', Tahoma, sans-serif;
+  --mono: Consolas, 'Courier New', monospace;
   color: var(--ink);
   background: var(--paper);
   font-family: var(--body);

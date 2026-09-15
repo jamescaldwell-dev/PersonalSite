@@ -50,7 +50,7 @@ function AfkSection() {
 
       <div className="afk-gallery">
         <figure className="afk-image afk-image--tall">
-          <img src={bwca2Image} alt="A canoeist resting on a quiet lake surrounded by trees" loading="lazy" decoding="async" width="640" height="853" />
+          <img src={bwca2Image} alt="A canoeist resting on a quiet lake surrounded by trees" loading="lazy" decoding="async" width="480" height="640" />
           <figcaption>Boundary Waters / Minnesota with my bestie</figcaption>
         </figure>
       </div>
