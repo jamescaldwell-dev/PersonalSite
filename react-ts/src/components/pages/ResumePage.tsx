@@ -119,9 +119,9 @@ function ResumePage() {
       <div className="resume-layout">
         <aside className="resume-index" aria-label="Resume sections">
           <p className="resume-section-label">On this page</p>
-          <a href="#resume-experience">Experience <span>01</span></a>
-          <a href="#resume-education">Education <span>02</span></a>
-          <a href="#resume-skills">Skills <span>03</span></a>
+          <a href="/resume#resume-experience">Experience <span>01</span></a>
+          <a href="/resume#resume-education">Education <span>02</span></a>
+          <a href="/resume#resume-skills">Skills <span>03</span></a>
           <p className="resume-index__location">Monticello, MN<br />United States</p>
         </aside>
 

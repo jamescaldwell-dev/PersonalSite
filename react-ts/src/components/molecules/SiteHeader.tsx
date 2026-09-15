@@ -1,31 +1,35 @@
+import { NavLink } from 'react-router-dom'
+
 const navigationItems = [
-  { label: 'About', href: '#about' },
-  { label: 'Resume', href: '#resume' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'About', href: '/about' },
+  { label: 'Resume', href: '/resume' },
+  { label: 'Projects', href: '/projects' },
+  { label: 'Contact', href: '/contact' },
 ]
 
 function SiteHeader() {
   return (
     <header className="site-header">
-      <a className="brand-mark" href="#home" aria-label="James Caldwell home">
+      <NavLink className="brand-mark" to="/" aria-label="James Caldwell home">
         JC<span>.</span>
-      </a>
+      </NavLink>
 
       <nav aria-label="Primary navigation">
         <ul className="site-nav">
           {navigationItems.map((item) => (
             <li key={item.label}>
-              <a href={item.href}>{item.label}</a>
+              <NavLink to={item.href} className={({ isActive }) => isActive ? 'is-active' : undefined}>
+                {item.label}
+              </NavLink>
             </li>
           ))}
         </ul>
       </nav>
 
-      <a className="availability" href="#contact">
+      <NavLink className="availability" to="/contact">
         <span className="availability__dot" aria-hidden="true" />
         Available for select work
-      </a>
+      </NavLink>
     </header>
   )
 }

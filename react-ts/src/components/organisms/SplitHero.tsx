@@ -17,8 +17,8 @@ function SplitHero() {
           powerful UI/UX.
         </p>
         <div className="hero-actions">
-          <ActionLink href="#projects">View selected work</ActionLink>
-          <ActionLink href="#contact" variant="outline">
+          <ActionLink href="/projects">View selected work</ActionLink>
+          <ActionLink href="/contact" variant="outline">
             Start a conversation
           </ActionLink>
         </div>

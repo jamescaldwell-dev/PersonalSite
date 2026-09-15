@@ -1,26 +1,23 @@
 import './App.css'
-import { useEffect, useState } from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import AboutPage from './components/pages/AboutPage'
+import ContactPage from './components/pages/ContactPage'
 import HomePage from './components/pages/HomePage'
 import ResumePage from './components/pages/ResumePage'
-
 import ProjectsPage from './components/pages/ProjectsPage'
 
 function App() {
-  const [currentHash, setCurrentHash] = useState(window.location.hash)
-
-  useEffect(() => {
-    const handleHashChange = () => setCurrentHash(window.location.hash)
-    window.addEventListener('hashchange', handleHashChange)
-
-    return () => window.removeEventListener('hashchange', handleHashChange)
-  }, [])
-
-  if (currentHash.startsWith('#resume')) return <ResumePage />
-  if (currentHash.startsWith('#about-james')) return <AboutPage />
-  if (currentHash.startsWith('#projects')) return <ProjectsPage />
-
-  return <HomePage />
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/resume" element={<ResumePage />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
 export default App

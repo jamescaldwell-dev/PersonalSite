@@ -19,7 +19,7 @@ function AboutPage() {
             Outside of work, I make room for the slower things: time outdoors, long walks,
             and getting far enough away from a screen to notice the landscape again.
           </p>
-          <ActionLink href="#home" variant="outline">Back to home</ActionLink>
+          <ActionLink href="/" variant="outline">Back to home</ActionLink>
         </div>
       </section>
     </main>

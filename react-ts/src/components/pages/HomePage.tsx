@@ -10,7 +10,7 @@ function HomePage() {
 
       <section className="home-footer" aria-label="Portfolio overview">
         <p>Based in Monticello, Minnesota, USA</p>
-        <a href="#about" className="scroll-cue">
+        <a href="/about" className="scroll-cue">
           <span>Explore</span>
           <span aria-hidden="true">↓</span>
         </a>
@@ -22,7 +22,6 @@ function HomePage() {
       <div className="placeholder-sections" aria-hidden="true">
         <section id="resume" />
         <section id="projects" />
-        <section id="contact" />
       </div>
     </main>
   )

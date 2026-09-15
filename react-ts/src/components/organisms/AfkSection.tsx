@@ -20,7 +20,7 @@ function AfkSection() {
           When I&apos;m away from the screen, I like to spend my time unplugged in nature.
           The quiet helps me return with a clearer head and a better sense of what matters.
         </p>
-        <ActionLink href="#about-james" variant="outline">
+        <ActionLink href="/about" variant="outline">
           More about James
         </ActionLink>
       </div>
