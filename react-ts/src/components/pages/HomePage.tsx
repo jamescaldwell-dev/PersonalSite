@@ -1,4 +1,5 @@
 import SiteHeader from '../molecules/SiteHeader'
+import AfkSection from '../organisms/AfkSection'
 import SplitHero from '../organisms/SplitHero'
 
 function HomePage() {
@@ -16,8 +17,9 @@ function HomePage() {
         <p className="home-footer__discipline">Strategy / Interface / Engineering</p>
       </section>
 
+      <AfkSection />
+
       <div className="placeholder-sections" aria-hidden="true">
-        <section id="about" />
         <section id="resume" />
         <section id="projects" />
         <section id="contact" />
