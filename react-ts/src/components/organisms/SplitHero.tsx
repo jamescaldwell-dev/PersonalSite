@@ -26,7 +26,7 @@ function SplitHero() {
 
       <div className="hero-portrait">
         <div className="portrait-frame">
-          <img src={heroImage} alt="James Caldwell, full-stack developer" />
+          <img src={heroImage} alt="James Caldwell, full-stack developer" fetchPriority="high" width="475" height="640" />
           <span className="portrait-label">James Caldwell / 01</span>
         </div>
         <a

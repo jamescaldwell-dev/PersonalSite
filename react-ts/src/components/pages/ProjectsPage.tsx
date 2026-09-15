@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import SiteHeader from '../molecules/SiteHeader'
 import SiteFooter from '../molecules/SiteFooter'
 import { projects, type Project, type ProjectDetailType } from '../../data/projects'
+import SEO from '../atoms/SEO'
 
 function ProjectsPage() {
   const [activeProject, setActiveProject] = useState<Project | null>(null)
@@ -14,6 +15,18 @@ function ProjectsPage() {
 
   return (
     <main className="portfolio-shell projects-page" id="projects-page">
+      <SEO
+        title="Projects | James Caldwell Full-Stack Developer"
+        description="Explore James Caldwell&apos;s software projects across healthcare technology, React, TypeScript, ASP.NET Core, GraphQL, and product-focused web development."
+        path="/projects"
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'CollectionPage',
+          name: 'Projects by James Caldwell',
+          url: 'https://jcaldwell.io/projects',
+          mainEntity: { '@type': 'ItemList', itemListElement: projects.map((project, index) => ({ '@type': 'ListItem', position: index + 1, name: project.title, description: project.summary })) },
+        }}
+      />
       <SiteHeader />
 
       <section className="projects-intro" aria-labelledby="projects-title">
@@ -32,7 +45,7 @@ function ProjectsPage() {
             className={`project-card${project.id === 'quest-outreach-platform' ? ' project-card--quest' : ''}`}
           >
             <div className="project-card__image-wrap">
-              <img src={project.image} alt={project.imageAlt} />
+              <img src={project.image} alt={project.imageAlt} loading="lazy" decoding="async" />
             </div>
 
             <div className="project-card__body">

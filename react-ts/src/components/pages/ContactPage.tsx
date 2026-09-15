@@ -1,10 +1,17 @@
 import SiteHeader from '../molecules/SiteHeader'
 import SiteFooter from '../molecules/SiteFooter'
 import contactBackgroundImage from '../../assets/design-foundations/background.jpg'
+import SEO from '../atoms/SEO'
 
 function ContactPage() {
   return (
     <main className="portfolio-shell contact-page" id="contact">
+      <SEO
+        title="Contact James Caldwell | Software Engineer"
+        description="Contact James Caldwell about software engineering, technical training, React, TypeScript, and thoughtful digital product work."
+        path="/contact"
+        structuredData={{ '@context': 'https://schema.org', '@type': 'ContactPage', name: 'Contact James Caldwell', url: 'https://jcaldwell.io/contact' }}
+      />
       <SiteHeader />
 
       <section

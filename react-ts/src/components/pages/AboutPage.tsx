@@ -2,10 +2,17 @@ import SiteHeader from '../molecules/SiteHeader'
 import SiteFooter from '../molecules/SiteFooter'
 import ActionLink from '../atoms/ActionLink'
 import AboutGallery from '../organisms/AboutGallery'
+import SEO from '../atoms/SEO'
 
 function AboutPage() {
   return (
     <main className="portfolio-shell about-page" id="about-james">
+      <SEO
+        title="About James Caldwell | Developer, Trainer & Outdoor Enthusiast"
+        description="Learn about James Caldwell, a software engineer and technical trainer who enjoys thoughtful products, clear systems, and time outdoors."
+        path="/about"
+        structuredData={{ '@context': 'https://schema.org', '@type': 'AboutPage', name: 'About James Caldwell', url: 'https://jcaldwell.io/about', description: 'About James Caldwell and his interests outside software development.' }}
+      />
       <SiteHeader />
 
       <section className="about-intro" aria-labelledby="about-title">

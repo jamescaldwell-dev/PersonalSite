@@ -1,6 +1,7 @@
 import resumePdf from '../../assets/design-foundations/JamesCaldwellResume.pdf'
 import SiteHeader from '../molecules/SiteHeader'
 import SiteFooter from '../molecules/SiteFooter'
+import SEO from '../atoms/SEO'
 
 const experience = [
   {
@@ -101,6 +102,13 @@ const resumeStructuredData = {
 function ResumePage() {
   return (
     <main className="portfolio-shell resume-page" id="resume">
+      <SEO
+        title="Resume | James Caldwell Software Engineer"
+        description="View the resume of James Caldwell, a software engineer and technical trainer experienced with React, TypeScript, ASP.NET Core, GraphQL, and healthcare technology."
+        path="/resume"
+        type="profile"
+        structuredData={{ '@context': 'https://schema.org', '@type': 'ProfilePage', name: 'James Caldwell Resume', url: 'https://jcaldwell.io/resume', mainEntity: { '@type': 'Person', name: 'James Caldwell', jobTitle: 'Software Engineer and Technical Trainer' } }}
+      />
       <script type="application/ld+json">{JSON.stringify(resumeStructuredData)}</script>
       <SiteHeader />
 
