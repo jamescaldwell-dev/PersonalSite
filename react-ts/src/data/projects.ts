@@ -1,6 +1,6 @@
 import bristolImage from '../assets/design-foundations/bristol.jpg'
 import devonImage from '../assets/design-foundations/DevonSeafood.jpg'
-import questImage from '../assets/design-foundations/QOP.jpg'
+import questImage from '../assets/design-foundations/QOP-optimized.webp'
 
 export type ProjectDetailType = 'technical' | 'non-technical'
 
