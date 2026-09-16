@@ -2,6 +2,7 @@ import SiteHeader from '../molecules/SiteHeader'
 import SiteFooter from '../molecules/SiteFooter'
 import contactBackgroundImage from '../../assets/design-foundations/background.jpg'
 import SEO from '../atoms/SEO'
+import ArrowIcon from '../atoms/ArrowIcon'
 
 function ContactPage() {
   return (
@@ -45,7 +46,7 @@ function ContactPage() {
               <strong>Email James</strong>
               <small>Open your email client</small>
             </span>
-            <span className="contact-option__arrow" aria-hidden="true">↗</span>
+            <ArrowIcon className="contact-option__arrow" />
           </a>
 
           <a className="contact-option" href="https://www.linkedin.com/in/james-caldwell-686042138/" target="_blank" rel="noreferrer">
@@ -58,7 +59,7 @@ function ContactPage() {
               <strong>Message on LinkedIn</strong>
               <small>Connect with James Caldwell</small>
             </span>
-            <span className="contact-option__arrow" aria-hidden="true">↗</span>
+            <ArrowIcon className="contact-option__arrow" />
           </a>
         </div>
       </section>

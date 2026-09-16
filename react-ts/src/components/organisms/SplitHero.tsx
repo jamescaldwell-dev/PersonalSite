@@ -1,6 +1,7 @@
 import heroImage from '../../assets/design-foundations/profilepic-optimized.jpg'
 import resumePdf from '../../assets/design-foundations/JamesCaldwellResume.pdf'
 import ActionLink from '../atoms/ActionLink'
+import ArrowIcon from '../atoms/ArrowIcon'
 
 function SplitHero() {
   return (
@@ -35,7 +36,7 @@ function SplitHero() {
           download="JamesCaldwellResume.pdf"
         >
           View resume
-          <span aria-hidden="true">↗</span>
+          <ArrowIcon className="resume-link__arrow" />
         </a>
       </div>
     </section>
