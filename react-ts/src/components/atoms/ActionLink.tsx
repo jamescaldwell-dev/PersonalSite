@@ -1,4 +1,5 @@
 import type { AnchorHTMLAttributes, ReactNode } from 'react'
+import ArrowIcon from './ArrowIcon'
 
 type ActionLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   children: ReactNode
@@ -9,9 +10,7 @@ function ActionLink({ children, className = '', variant = 'solid', ...props }: A
   return (
     <a className={`action-link action-link--${variant} ${className}`.trim()} {...props}>
       <span>{children}</span>
-      <span className="action-link__arrow" aria-hidden="true">
-        ↗
-      </span>
+      <ArrowIcon className="action-link__arrow" />
     </a>
   )
 }

@@ -2,6 +2,7 @@ import resumePdf from '../../assets/design-foundations/JamesCaldwellResume.pdf'
 import SiteHeader from '../molecules/SiteHeader'
 import SiteFooter from '../molecules/SiteFooter'
 import SEO from '../atoms/SEO'
+import ArrowIcon from '../atoms/ArrowIcon'
 
 const experience = [
   {
@@ -120,7 +121,7 @@ function ResumePage() {
         <div className="resume-intro__aside">
           <p>Software engineer and technical trainer focused on thoughtful products, clear systems, and useful outcomes.</p>
           <a className="action-link" href={resumePdf} download="JamesCaldwellResume.pdf">
-            Download PDF <span aria-hidden="true">↗</span>
+            Download PDF <ArrowIcon className="action-link__arrow" />
           </a>
         </div>
       </section>
