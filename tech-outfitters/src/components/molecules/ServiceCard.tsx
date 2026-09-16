@@ -10,9 +10,11 @@ function ServiceCard({ tier, featured = false }: ServiceCardProps) {
     <article className={`service-card${featured ? ' service-card--featured' : ''}`}>
       <h3>{tier.name}</h3>
       <p className="service-card__price">
+        {tier.startingAt && <span className="service-card__starting-at">Starting at</span>}
         {tier.price}
-        <span>{tier.cadence}</span>
+        <span className="service-card__cadence">{tier.cadence}</span>
       </p>
+      {tier.priceNote && <p className="service-card__price-note">{tier.priceNote}</p>}
       <p className="service-card__description">{tier.description}</p>
       <ul className="service-card__features">
         {tier.features.map((feature) => (
