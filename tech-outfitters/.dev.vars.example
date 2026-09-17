@@ -1,0 +1,6 @@
+# Worker secrets for local dev only (never commit real values).
+# In production, set these with: wrangler secret put RESEND_API_KEY / CAPTCHA_SECRET_KEY / SESSION_SECRET
+RESEND_API_KEY=
+CAPTCHA_SECRET_KEY=
+# Generate a long random value, e.g.: node -e "console.log(crypto.randomBytes(32).toString('hex'))"
+SESSION_SECRET=

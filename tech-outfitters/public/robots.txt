@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://techoutfitters.com/sitemap.xml
+Sitemap: https://techoutfitters.jcaldwell.io/sitemap.xml

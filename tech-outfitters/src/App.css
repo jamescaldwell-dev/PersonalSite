@@ -95,6 +95,45 @@ section[id] { scroll-margin-top: 2rem; }
 .site-footer__contact { color: var(--ink); font-size: 0.78rem; font-weight: 600; justify-self: end; text-decoration: none; }
 .site-footer__contact:hover, .site-footer__contact:focus-visible { color: var(--red); }
 
+/* Get-started intake wizard */
+.get-started-page { padding: clamp(3rem, 8vh, 5rem) 0; }
+.get-started-page h1 { color: var(--ink); font-family: var(--display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; letter-spacing: -0.02em; margin: 0 0 2rem; }
+.wizard-progress { margin-bottom: 2rem; }
+.wizard-progress__track { background: var(--line); border-radius: 999px; height: 6px; overflow: hidden; width: 100%; }
+.wizard-progress__fill { background: var(--slate); height: 100%; transition: width 240ms ease; }
+.wizard-progress__label { color: var(--muted); font-size: 0.85rem; margin: 0.6rem 0 0; }
+.intake-wizard__step { animation: wizard-step-in 240ms ease; }
+.intake-wizard__step h2 { color: var(--ink); font-family: var(--display); font-size: clamp(1.5rem, 3vw, 2.1rem); margin: 0 0 1rem; }
+.wizard-field { display: grid; gap: 0.5rem; margin-bottom: 1.25rem; }
+.wizard-field label, .wizard-field legend { color: var(--ink); font-size: 0.85rem; font-weight: 700; }
+.wizard-field input, .wizard-field textarea { background: #fff; border: 1px solid var(--line); border-radius: 4px; color: var(--ink); font: inherit; padding: 0.85rem 1rem; resize: vertical; }
+.wizard-field input:focus-visible, .wizard-field textarea:focus-visible { border-color: var(--slate); }
+.wizard-field__note { background: var(--line); border-radius: 4px; color: var(--muted); font-size: 0.85rem; padding: 0.75rem 1rem; }
+.wizard-step__actions { display: flex; gap: 1rem; margin-top: 1.5rem; }
+.wizard-step__primary { background: var(--slate); border: 0; border-radius: 999px; color: var(--paper); cursor: pointer; font-size: 0.95rem; font-weight: 700; padding: 0.9rem 2rem; transition: background 180ms ease, transform 180ms ease; }
+.wizard-step__primary:hover:not(:disabled), .wizard-step__primary:focus-visible:not(:disabled) { background: var(--red); transform: translateY(-2px); }
+.wizard-step__primary:disabled { cursor: not-allowed; opacity: 0.6; }
+.wizard-step__secondary { background: transparent; border: 2px solid var(--line); border-radius: 999px; color: var(--ink); cursor: pointer; font-size: 0.95rem; font-weight: 700; padding: 0.9rem 2rem; }
+.intro-video-step__placeholder { align-items: center; aspect-ratio: 16 / 9; background: var(--line); border-radius: 8px; color: var(--muted); display: flex; justify-content: center; margin: 1.5rem 0; }
+.comparison-sites__list { list-style: none; margin: 0 0 1rem; padding: 0; display: grid; gap: 0.75rem; }
+.comparison-sites__list li { border: 1px solid var(--line); border-radius: 4px; padding: 0.75rem 1rem; }
+.comparison-sites__add { display: grid; gap: 0.5rem; }
+.file-upload { display: grid; gap: 0.5rem; margin-bottom: 1.25rem; }
+.file-upload label { color: var(--ink); font-size: 0.85rem; font-weight: 700; }
+.file-upload__help { color: var(--muted); font-size: 0.85rem; margin: 0; }
+.file-upload__error { color: var(--red); }
+.review-summary { display: grid; gap: 0.25rem 1.5rem; grid-template-columns: max-content 1fr; }
+.review-summary dt { color: var(--muted); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; }
+.review-summary dd { color: var(--ink); margin: 0 0 0.75rem; }
+.intake-wizard__share { border-top: 1px solid var(--line); color: var(--muted); font-size: 0.85rem; margin-top: 3rem; padding-top: 1.5rem; }
+
+@keyframes wizard-step-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .intake-wizard__step { animation: none; }
+  .wizard-progress__fill, .action-link, .wizard-step__primary { transition: none; }
+}
+
 @media (max-width: 860px) {
   .site-header { grid-template-columns: 1fr; justify-items: center; padding-top: 1.5rem; text-align: center; }
   .site-nav { flex-wrap: wrap; justify-content: center; }
@@ -106,4 +145,5 @@ section[id] { scroll-margin-top: 2rem; }
   .contact { grid-template-columns: 1fr; }
   .site-footer { grid-template-columns: 1fr; justify-items: center; text-align: center; }
   .site-footer p:nth-child(2), .site-footer__contact { justify-self: center; }
+  .review-summary { grid-template-columns: 1fr; }
 }
