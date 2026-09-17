@@ -19,30 +19,6 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    id: 'tech-outfitters',
-    title: 'Tech Outfitters',
-    subtitle: 'Small business web studio launch',
-    summary:
-      'A from-scratch landing page and brand for a husband-and-wife web studio helping small businesses in the Monticello, Otsego, and Big Lake area launch fast, affordable, engineer-vetted websites.',
-    image:
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
-    imageAlt: 'Laptop displaying a website design in progress',
-    liveUrl: 'https://techoutfitters.jcaldwell.io',
-    technologies: ['React', 'TypeScript', 'Vite', 'Express', 'Resend API', 'Cloudflare'],
-    technicalDetails: [
-      'Scaffolded an independent React, TypeScript, and Vite app with its own atomic component structure, mirroring proven conventions from this portfolio.',
-      'Built a services grid, accessible FAQ accordion, and a contact form backed by a dedicated Express API with rate limiting, origin checks, and CAPTCHA verification.',
-      'Designed an original visual identity blending modern tech aesthetics with a rugged, outdoor-outfitter tone and generous whitespace.',
-      'Kept CAPTCHA verification provider-neutral on the server so the client widget can be swapped without rewriting form logic.'
-    ],
-    nonTechnicalDetails: [
-      'Starting a business alongside my wife Erin meant translating a business plan into clear, honest marketing copy without overstating what we offer yet.',
-      'Keeping pricing transparent, even as placeholder figures, builds trust with small business owners who are wary of hidden costs.',
-      'A fast, same-day preview experience mirrors how we want clients to feel about working with us: quick, capable, and low-friction.',
-      'Building for a real local audience reinforced how important plain language and clear next steps are over technical polish alone.'
-    ]
-  },
-  {
     id: 'quest-outreach-platform',
     title: 'Quest Outreach Platform',
     subtitle: 'Healthcare outreach operations',
@@ -161,7 +137,7 @@ export const projects: Project[] = [
     title: 'Tech Outfitters',
     subtitle: 'Small business web studio launch',
     summary:
-      'A from-scratch landing page and brand for a husband-and-wife web studio helping small businesses in the Monticello, Otsego, and Big Lake area launch fast, affordable, engineer-vetted websites.',
+      'A from-scratch landing page and brand for my new web business helping small businesses in the Monticello, Otsego, and Big Lake area launch fast, affordable, engineer-vetted websites.',
     image:
       'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
     imageAlt: 'Laptop displaying a website design in progress',
