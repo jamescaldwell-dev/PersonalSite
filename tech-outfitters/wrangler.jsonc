@@ -1,0 +1,45 @@
+{
+  "name": "techoutfitters",
+  "compatibility_date": "2026-09-15",
+  "main": "server/worker.ts",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application"
+  },
+  // Placeholder IDs — replace after running:
+  //   wrangler d1 create techoutfitters-db
+  //   wrangler r2 bucket create techoutfitters-client-files
+  //   wrangler kv namespace create techoutfitters-kv
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "techoutfitters-db",
+      "database_id": "f7fe4055-0290-4276-904f-323a3b99a231",
+      "migrations_dir": "server/migrations"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "FILES",
+      "bucket_name": "techoutfitters-client-files"
+    }
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "KV",
+      "id": "a2a9696b53e54f9ebf247d9b35a62d4a"
+    }
+  ],
+  "vars": {
+    "ALLOWED_ORIGINS": "http://localhost:5173,https://techoutfitters.jcaldwell.io",
+    "CONTACT_INBOX": "james.caldwell82@outlook.com,erin.caldwell77@gmail.com",
+    "CAPTCHA_PROVIDER": "turnstile",
+    "EMAIL_FROM": "hello@jcaldwell.io",
+    "PUBLIC_SITE_URL": "https://techoutfitters.jcaldwell.io",
+    // Set up at https://one.dash.cloudflare.com — Access > Applications, protecting /support/*
+    "CF_ACCESS_TEAM_DOMAIN": "https://REPLACE_WITH_TEAM_NAME.cloudflareaccess.com",
+    "CF_ACCESS_AUD": "REPLACE_WITH_ACCESS_APPLICATION_AUD_TAG",
+    "CF_ACCESS_ADMIN_EMAILS": "james.caldwell82@gmail.com, james.caldwell82@outlook.com,erin.caldwell77@gmail.com"
+  }
+}

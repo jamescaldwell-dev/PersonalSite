@@ -5,6 +5,7 @@ declare global {
     turnstile?: {
       render: (container: HTMLElement, options: Record<string, unknown>) => string
       reset: (widgetId?: string) => void
+      remove: (widgetId: string) => void
     }
   }
 }
@@ -26,10 +27,11 @@ function CaptchaWidget({ onToken, onExpire }: CaptchaWidgetProps) {
     if (!siteKey || !containerRef.current) return
 
     let cancelled = false
+    let renderedWidgetId: string | undefined
 
     function renderWidget() {
       if (cancelled || !window.turnstile || !containerRef.current) return
-      window.turnstile.render(containerRef.current, {
+      renderedWidgetId = window.turnstile.render(containerRef.current, {
         sitekey: siteKey,
         callback: onToken,
         'expired-callback': onExpire,
@@ -49,6 +51,7 @@ function CaptchaWidget({ onToken, onExpire }: CaptchaWidgetProps) {
 
     return () => {
       cancelled = true
+      if (renderedWidgetId && window.turnstile) window.turnstile.remove(renderedWidgetId)
     }
   }, [onExpire, onToken])
 

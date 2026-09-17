@@ -1,4 +1,5 @@
 import ContactForm from '../molecules/ContactForm'
+import ActionLink from '../atoms/ActionLink'
 
 const contactImage = 'https://images.unsplash.com/photo-1550439062-609e1531270e?auto=format&fit=crop&w=1200&q=80'
 
@@ -12,6 +13,11 @@ function ContactSection() {
           Share a few details and we&apos;ll follow up with a free preview of what your new site
           could look like - often within a day.
         </p>
+        <p>
+          Prefer a guided walkthrough instead? Our project intake asks a few questions at a time,
+          saves as you go, and nothing is required.
+        </p>
+        <ActionLink href="/get-started" variant="outline">Start our project intake</ActionLink>
         <img
           src={contactImage}
           alt="Close-up of program code on a screen"

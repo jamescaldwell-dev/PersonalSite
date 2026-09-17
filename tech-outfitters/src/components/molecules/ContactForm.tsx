@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from 'react'
+import { useCallback, useState, type FormEvent } from 'react'
 import StatusMessage from '../atoms/StatusMessage'
 import CaptchaWidget from './CaptchaWidget'
 
@@ -13,13 +13,18 @@ const initialState: FormState = { name: '', email: '', businessName: '', message
 
 function ContactForm() {
   const [form, setForm] = useState<FormState>(initialState)
+  const [hasInteracted, setHasInteracted] = useState(false)
   const [captchaToken, setCaptchaToken] = useState('')
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
 
+  const handleCaptchaExpire = useCallback(() => setCaptchaToken(''), [])
+
   function updateField(field: keyof FormState) {
     return (event: FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      setForm((current) => ({ ...current, [field]: event.currentTarget.value }))
+      const value = event.currentTarget.value
+      setHasInteracted(true)
+      setForm((current) => ({ ...current, [field]: value }))
     }
   }
 
@@ -78,7 +83,7 @@ function ContactForm() {
         <textarea id="contact-message" name="message" required rows={5} value={form.message} onChange={updateField('message')} />
       </div>
 
-      <CaptchaWidget onToken={setCaptchaToken} onExpire={() => setCaptchaToken('')} />
+      {hasInteracted && <CaptchaWidget onToken={setCaptchaToken} onExpire={handleCaptchaExpire} />}
 
       <button type="submit" className="contact-form__submit" disabled={status === 'loading'}>
         {status === 'loading' ? 'Sending…' : 'Send message'}

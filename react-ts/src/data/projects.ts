@@ -27,7 +27,7 @@ export const projects: Project[] = [
     image:
       'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
     imageAlt: 'Laptop displaying a website design in progress',
-    liveUrl: 'https://techoutfitters.com',
+    liveUrl: 'https://techoutfitters.jcaldwell.io',
     technologies: ['React', 'TypeScript', 'Vite', 'Express', 'Resend API', 'Cloudflare'],
     technicalDetails: [
       'Scaffolded an independent React, TypeScript, and Vite app with its own atomic component structure, mirroring proven conventions from this portfolio.',

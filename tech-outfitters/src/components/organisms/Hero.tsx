@@ -16,8 +16,8 @@ function Hero() {
           that turn local searches into calls, bookings, and walk-ins for your business.
         </p>
         <div className="hero__actions">
-          <ActionLink href="#contact">Get your free preview</ActionLink>
-          <ActionLink href="#services" variant="outline">See pricing</ActionLink>
+          <ActionLink href="/get-started">Start your project</ActionLink>
+          <ActionLink href="#contact" variant="outline">Get your free preview</ActionLink>
         </div>
       </div>
 

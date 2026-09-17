@@ -18,7 +18,7 @@ function HomePage() {
           '@context': 'https://schema.org',
           '@type': 'LocalBusiness',
           name: 'Tech Outfitters LLC',
-          url: 'https://techoutfitters.com/',
+          url: 'https://techoutfitters.jcaldwell.io/',
           areaServed: ['Monticello, MN', 'Otsego, MN', 'Big Lake, MN', 'Elk River, MN', 'Rogers, MN'],
         }}
       />

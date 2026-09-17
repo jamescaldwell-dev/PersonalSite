@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "dev:api": "node server/index.mjs",
+    "dev:api": "wrangler dev --port 8788",
+    "db:migrate": "wrangler d1 migrations apply techoutfitters-db",
+    "db:migrate:local": "wrangler d1 migrations apply techoutfitters-db --local",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "npm run build && wrangler dev",
@@ -16,14 +18,13 @@
     "@fontsource/inter": "^5.2.8",
     "@fontsource/jetbrains-mono": "^5.2.8",
     "@fontsource/space-grotesk": "^5.2.8",
-    "dotenv": "^17.4.2",
-    "express": "^5.1.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-router-dom": "^7.18.3"
   },
   "devDependencies": {
     "@cloudflare/vite-plugin": "^1.54.10",
+    "@cloudflare/workers-types": "^5.20260915.1",
     "@eslint/js": "^10.0.1",
     "@types/node": "^24.13.3",
     "@types/react": "^19.2.18",

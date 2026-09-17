@@ -5,9 +5,10 @@ type SEOProps = {
   description: string
   path: string
   structuredData?: Record<string, unknown> | Record<string, unknown>[]
+  noIndex?: boolean
 }
 
-const siteUrl = 'https://techoutfitters.com'
+const siteUrl = 'https://techoutfitters.jcaldwell.io'
 const socialImage = `${siteUrl}/og-image.jpg`
 
 function upsertMeta(attribute: 'name' | 'property', key: string, content: string) {
@@ -20,13 +21,13 @@ function upsertMeta(attribute: 'name' | 'property', key: string, content: string
   element.content = content
 }
 
-function SEO({ title, description, path, structuredData }: SEOProps) {
+function SEO({ title, description, path, structuredData, noIndex = false }: SEOProps) {
   useEffect(() => {
     const canonicalUrl = `${siteUrl}${path}`
     document.title = title
 
     upsertMeta('name', 'description', description)
-    upsertMeta('name', 'robots', 'index, follow, max-image-preview:large')
+    upsertMeta('name', 'robots', noIndex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large')
     upsertMeta('property', 'og:title', title)
     upsertMeta('property', 'og:description', description)
     upsertMeta('property', 'og:url', canonicalUrl)
@@ -52,7 +53,7 @@ function SEO({ title, description, path, structuredData }: SEOProps) {
       document.head.appendChild(schema)
     }
     schema.textContent = structuredData ? JSON.stringify(structuredData) : ''
-  }, [description, path, structuredData, title])
+  }, [description, path, structuredData, title, noIndex])
 
   return null
 }
