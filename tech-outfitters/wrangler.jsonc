@@ -40,6 +40,8 @@
     // Set up at https://one.dash.cloudflare.com — Access > Applications, protecting /support/*
     "CF_ACCESS_TEAM_DOMAIN": "https://REPLACE_WITH_TEAM_NAME.cloudflareaccess.com",
     "CF_ACCESS_AUD": "REPLACE_WITH_ACCESS_APPLICATION_AUD_TAG",
-    "CF_ACCESS_ADMIN_EMAILS": "james.caldwell82@gmail.com, james.caldwell82@outlook.com,erin.caldwell77@gmail.com"
+    "CF_ACCESS_ADMIN_EMAILS": "james.caldwell82@gmail.com, james.caldwell82@outlook.com,erin.caldwell77@gmail.com",
+    // Project intake wizard is disabled until the UI is ready to relaunch it. Set to "true" to re-enable.
+    "INTAKE_FEATURE_ENABLED": "false"
   }
 }

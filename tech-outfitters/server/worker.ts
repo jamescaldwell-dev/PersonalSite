@@ -26,6 +26,13 @@ export default {
       return handleContact(request, env)
     }
 
+    // Project intake wizard is temporarily disabled (not linked from the UI) — refuse it
+    // at the Worker level too, so no D1/KV/R2 usage occurs from stray/bot requests.
+    const isIntakeRoute = url.pathname.startsWith('/api/intake/') || url.pathname.startsWith('/api/auth/') || url.pathname.startsWith('/support/')
+    if (isIntakeRoute && env.INTAKE_FEATURE_ENABLED !== 'true') {
+      return new Response('Not found', { status: 404, headers: securityHeaders })
+    }
+
     if (url.pathname === '/api/intake/start' && request.method === 'POST') {
       return handleStart(request, env)
     }

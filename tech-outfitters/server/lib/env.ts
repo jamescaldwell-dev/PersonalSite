@@ -19,4 +19,6 @@ export interface Env {
   CF_ACCESS_AUD: string
   // Comma-separated allowlist of admin emails permitted to open share links (defense in depth alongside Access policy).
   CF_ACCESS_ADMIN_EMAILS: string
+  // Set to "true" to re-enable the project intake wizard's API routes; defaults to disabled.
+  INTAKE_FEATURE_ENABLED?: string
 }
